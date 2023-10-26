@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: 
           npm install open
-          zip -r Flow.Launcher.Plugin.SearchNAOB.zip . -x '*.git*'
+          zip -r Flow.Launcher.Plugin.SearchNAOB.zip . -x '.git'
       - name: Publish
         uses: softprops/action-gh-release@v1
         with:
