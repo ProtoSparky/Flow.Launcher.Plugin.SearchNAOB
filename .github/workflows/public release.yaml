@@ -25,8 +25,8 @@ jobs:
           prop_path: 'Version'
       - run: echo ${{steps.version.outputs.prop}} 
       - name: Install dependencies
-        run: 
-          npm install open
+        run: |
+          npm install
           zip -r Flow.Launcher.Plugin.SearchNAOB.zip . -x '.git'
       - name: Publish
         uses: softprops/action-gh-release@v1
