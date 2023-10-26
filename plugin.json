@@ -4,9 +4,9 @@
   "Name": "Search-NAOB",
   "Description": "Search the norwegian academic dictionary (unofficial)",
   "Author": "ProtoSparky",
-  "Version": "0.0.5",
+  "Version": "0.0.6",
   "Language": "javascript",
   "Website": "https://github.com/ProtoSparky/Flow.Launcher.Plugin.SearchNAOB",
-  "IcoPath": "app.png",
+  "IcoPath": "./assets/img/app.png",
   "ExecuteFileName": "main.js"
 }

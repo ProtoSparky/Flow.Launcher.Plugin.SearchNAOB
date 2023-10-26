@@ -1,10 +1,9 @@
-const open = require('./node_modules/open')
 //Do note that this plugin is unofficial. It is NOT made by naob.no
-BaseURL = "https://naob.no/søk/";
-//const open = import('./lib/open-9.1.0/index.js');
+import open, {openApp, apps} from 'open';
+const BaseURL = "https://naob.no/søk/";
+
 
 const { method, parameters } = JSON.parse(process.argv[2])
-
 if (method === "query") {
     if(parameters == "" || parameters == " "){
         //Change display if nothing is inputed
@@ -14,12 +13,50 @@ if (method === "query") {
                     "Title": "Search NAOB.no",
                     "Subtitle": "Search naob.no",
                     "JsonRPCAction": {
-                        "method": "do_something_for_query",
-                        "parameters": ["https://github.com/Flow-Launcher/Flow.Launcher"]
+                        "method": "OpenURL",
+                        "parameters": [BaseURL]
                     },
-                    "IcoPath": "app.png",
+                    "IcoPath": "./assets/img/app.png",
                     "score" : 0
                 }]
+            }
+        ));
+       
+    }
+    else if(parameters == ":about"){
+        console.log(JSON.stringify(
+            {
+                "result": [{
+                    "Title": "Plugin made with ❤ by ProtoSparky",
+                    "Subtitle": "Hope you like it!",
+                    "JsonRPCAction": {
+                        "method": "OpenURL",
+                        "parameters": ["https://github.com/ProtoSparky/"]
+                    },
+                    "IcoPath": "./assets/img/app.png",
+                    "score" : 2
+                },
+                {
+                    "Title": "Plugin repo",
+                    "Subtitle": "https://github.com/ProtoSparky/Flow.Launcher.Plugin.SearchNAOB",
+                    "JsonRPCAction": {
+                        "method": "OpenURL",
+                        "parameters": ["https://github.com/ProtoSparky/Flow.Launcher.Plugin.SearchNAOB"]
+                    },
+                    "IcoPath": "./assets/img/app.png",
+                    "score" : 1
+                },
+                {
+                    "Title": "Current version : 0.06",
+                    "Subtitle": "It's finally working!",
+                    "JsonRPCAction": {
+                        "method": "OpenURL",
+                        "parameters": [""]
+                    },
+                    "IcoPath": "./assets/img/app.png",
+                    "score" : 0
+                },
+                ],
             }
         ));
     }
@@ -32,10 +69,10 @@ if (method === "query") {
                     "Title": "Search "+ parameters,
                     "Subtitle":CurrentURL ,
                     "JsonRPCAction": {
-                        "method": "do_something_for_query",
-                        "parameters": ["https://github.com/Flow-Launcher/Flow.Launcher"]
+                        "method": "OpenURL",
+                        "parameters": [CurrentURL]
                     },
-                    "IcoPath": "app.png",
+                    "IcoPath": "./assets/img/app.png",
                     "score" : 0
                 }]
             }
@@ -45,12 +82,21 @@ if (method === "query") {
 
 } 
 
-if (method === "do_something_for_query") {
-    url = parameters[0]
-    do_something_for_query(url)
-    //open(url)
+if (method === "OpenURL") {
+    const url = parameters[0]
+    //do_something_for_query(url)
+    open(url)
 }
 
-function do_something_for_query(url) {
-    open(url);
+
+
+/* Needs work
+function getVersionNumber() {
+    
+    const fse = require('fs-extra')
+
+    // Read the JSON file
+    const jsonData = JSON.parse(fse.readFileSync('plugin.json', 'utf8'));    
+    return jsonData.Version; 
 }
+*/
