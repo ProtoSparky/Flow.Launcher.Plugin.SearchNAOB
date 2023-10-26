@@ -1,4 +1,4 @@
-//const open = require('./node_modules/open')
+const open = require('./node_modules/open')
 //Do note that this plugin is unofficial. It is NOT made by naob.no
 BaseURL = "https://naob.no/søk/";
 //const open = import('./lib/open-9.1.0/index.js');
@@ -47,10 +47,10 @@ if (method === "query") {
 
 if (method === "do_something_for_query") {
     url = parameters[0]
-    //do_something_for_query(url)
+    do_something_for_query(url)
     //open(url)
 }
 
 function do_something_for_query(url) {
-    //open(url);
+    open(url);
 }
