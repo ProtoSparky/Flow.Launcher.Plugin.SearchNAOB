@@ -9,5 +9,3 @@ Here are the default commands
 |naob :about| shows about page for naob.no plugin |
 Do note this plugin is under development. it's not even reached the v1 phase, so expect some bugs.
 Good luck!
-
-
