@@ -1,10 +1,10 @@
 {
   "ID": "8g5cdc9a78ef4a7e667e138f1fc04019",
   "ActionKeyword": "naob",
-  "Name": "Search-NAOB",
+  "Name": "Search NAOB",
   "Description": "Search the norwegian academic dictionary (unofficial)",
   "Author": "ProtoSparky",
-  "Version": "0.0.6",
+  "Version": "0.1.6",
   "Language": "javascript",
   "Website": "https://github.com/ProtoSparky/Flow.Launcher.Plugin.SearchNAOB",
   "IcoPath": "./assets/img/app.png",
